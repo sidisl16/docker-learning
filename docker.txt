@@ -1,0 +1,69 @@
+docker
+docker version
+docker info
+docker run --publish 80:80 --detach nginx
+
+docker container ls
+docker container stop 743
+docker container ls -a
+docker run --publish 80:80 --detach --name webhost nginx
+docker container logs webhost
+docker container --help
+docker rm 0ed 743 5c4
+docker run -name mongo -d mongo
+docker container inspect nginx
+docker container stats nginx
+
+docker run -it --name nginx nginx bash
+docker exec -it nginx bash
+
+docker pull alpine
+
+docker container inspect --format '{{ .NetworkSettings.IPAddress }}' nginx
+docker network ls
+docker network create my_app_network
+docker network inspect my_app_network
+docker network connect 25c91f0ab04b nginx
+docker network disconnect 25c91f0ab04b nginx
+
+docker container exec -it nginx0 ping nginx
+
+docker run --net coolnet --net-alias search -d elasticsearch:2
+docker run --rm --net coolnet -it centos curl search:9200
+
+docker image ls
+docker tag nginx:latest sidisl16/nginx:latest
+docker push sidisl16/nginx
+
+docker image prune
+docker system prune
+docker image prune -a
+docker system df
+
+docker volume create db-space
+docker run --name psql -v db-space:/var/lib/postgresql/data -d postgres:9.6.1
+
+docker-compose up
+docker-compose down
+docker-compose down --rmi local
+
+docker swarm init --advertise-addr 192.168.29.36
+
+docker swarm join --token SWMTKN-1-3uq5uewust06vtg9vy25jz3ce9uul8yltqga54asve4gbwq020-4nzz5lta83ru24o0ljgrv9y2x 192.168.29.36:2377
+docker node ls
+
+docker service create --name alpine-scale --replicas 2 alpine ping 8.8.8.8
+docker service update --replicas 4 alpine-scale
+
+
+docker network create --driver overlay testing
+
+
+sudo docker run --rm -it --name cts --network host   -v /home/hmecl002981/certs/cts.p12:/home/keystore/cts.p12 sidisl16/cts-am:latest
+
+
+
+
+****************************************
+Kubernetes
+****************************************

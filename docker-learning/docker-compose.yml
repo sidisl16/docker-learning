@@ -1,0 +1,10 @@
+version: '3'
+services: 
+  test:
+    image: dcoker-test
+    build: .
+    ports:
+      - '8080:8080'
+    volumes:
+      - './file.txt:/usr/share/test/file.txt:ro'    
+    

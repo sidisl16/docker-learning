@@ -1,0 +1,13 @@
+FROM openjdk:11
+
+RUN mkdir -p /usr/share/docker-test
+
+RUN mkdir -p /usr/share/test
+
+WORKDIR /usr/share/docker-test
+
+COPY ./target/docker-learning-0.0.1.jar ./
+
+EXPOSE 8080
+
+CMD ["java","-jar","docker-learning-0.0.1.jar"]

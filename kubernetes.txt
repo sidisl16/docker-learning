@@ -1,0 +1,6 @@
+kubectl run my-nginx --image nginx
+kubectl get pods
+kubectl delete pods my-nginx
+
+kubectl create deployment nginx --image nginx
+kubectl delete deployment my-nginx
